@@ -7,136 +7,164 @@
 - **Branch:** Data Science
 - **Batch:** F
 - **Project Title:** MailTone AI — Intelligent Email Tone & Intent Analyzer
-- **GitHub Username:** krishna-nema
+- **GitHub Username:** [krishna-nema](https://github.com/krishna-nema)
+- **Training Program:** To be updated
 
-## Project Overview
+## 1. Project Overview
 
-MailTone AI is an NLP-based application that analyzes professional emails to identify tone-related indicators, sentiment, intent, and potential communication risks. It combines traditional Natural Language Processing techniques with Generative AI to help users understand how their messages may be perceived and improve their professional communication.
+MailTone AI is an NLP-based application that analyzes the tone, sentiment, intent, and communication style of email messages. It helps users understand how their emails may be perceived by recipients and provides suggestions to improve clarity, professionalism, and effectiveness.
 
-## Objectives
+The application combines traditional Natural Language Processing (NLP) techniques with Google's Gemini API to generate contextual email analysis and improvement suggestions.
 
-- Analyze email sentiment and linguistic features.
-- Identify tone-related indicators, including urgency, formality, and aggressive wording.
-- Interpret the sender's likely intent.
-- Estimate possible recipient perception.
-- Identify potential communication risks.
-- Suggest improvements and generate a more professional email.
+## 2. Objectives
 
-## Key Features
+- Analyze the sentiment and tone of email messages.
+- Identify important keywords and potential urgency.
+- Evaluate formality, readability, and potentially aggressive language.
+- Understand email intent and communication context.
+- Suggest improvements to make emails clearer and more professional.
+- Provide an interactive interface for analyzing email content.
 
-- **Sentiment Analysis:** Uses TextBlob to estimate the sentiment of an email.
-- **Keyword Extraction:** Uses TF-IDF to identify important terms.
-- **Linguistic Analysis:** Examines urgency, formality, and aggressive wording.
-- **Readability Analysis:** Estimates how easy the email is to read.
-- **Communication Risk Estimation:** Calculates a heuristic risk score from selected linguistic signals.
-- **Generative AI Analysis:** Uses the Google Gemini API for contextual tone and intent interpretation.
-- **Email Rewriting:** Suggests a more professional version while aiming to preserve the original meaning.
-- **Interactive Dashboard:** Provides results through a Streamlit web interface.
+## 3. Key Features
 
-## Technology Stack
+- **Sentiment Analysis:** Estimates the emotional polarity of email text.
+- **Keyword Extraction:** Identifies important terms using TF-IDF.
+- **Tone Analysis:** Evaluates the communication style and formality of an email.
+- **Intent Analysis:** Uses an LLM to interpret the context and likely purpose of an email.
+- **Urgency and Risk Indicators:** Highlights potentially urgent wording or communication risks.
+- **Email Improvement:** Generates suggestions and a revised version of the email.
+- **Interactive Dashboard:** Provides a user-friendly interface built with Streamlit.
+
+## 4. Technology Stack
 
 - **Programming Language:** Python
-- **Frontend:** Streamlit
-- **Traditional NLP:** TextBlob, Scikit-learn, TF-IDF
-- **Generative AI:** Google Gemini API, Google GenAI SDK
-- **Structured Output:** Pydantic
-- **Configuration:** PyYAML, python-dotenv
+- **Frontend / Interface:** Streamlit
+- **Natural Language Processing:** TextBlob
+- **Machine Learning:** Scikit-learn
+- **Keyword Extraction:** TF-IDF
+- **Large Language Model:** Google Gemini API
+- **Configuration:** YAML
+- **Environment Variables:** python-dotenv
 
-## Project Structure
+## 5. Repository Structure
 
 ```text
-MailTone-AI/
-├── app.py
-├── src/
-│   ├── __init__.py
-│   ├── nlp_processor.py
-│   └── llm_analyzer.py
-├── config/
-│   └── config.yaml
-├── prompts/
-│   └── email_analysis.txt
-├── presentations/
+MUJ-DS-23FE10CDS00277/
 ├── README.md
-├── requirements.txt
+├── code/
+│   ├── app.py
+│   ├── requirements.txt
+│   ├── src/
+│   │   ├── __init__.py
+│   │   ├── nlp_processor.py
+│   │   └── llm_analyzer.py
+│   ├── config/
+│   │   └── config.yaml
+│   └── prompts/
+│       └── email_analysis.txt
+├── capstone/
+│   └── project-overview.md
+├── presentations/
+│   ├── presentation files
+│   └── presentation speech
+├── resources/
+│   └── screenshots and sample results
 ├── .env.example
 └── .gitignore
 ```
 
-The repository also includes the required Batch F folders: `assignments/`, `notebooks/`, `code/`, `resources/`, and `capstone/`.
+*Note: The presentation and resource entries above describe the intended contents; keep the folder contents and filenames consistent with the actual files uploaded to the repository.*
 
-## Installation and Setup
+## 6. Installation and Setup
 
-1. Clone the repository:
+### Prerequisites
 
-   ```bash
-   git clone https://github.com/krishna-nema/MUJ-DS-23FE10CDS00277.git
-   ```
+- Python 3.10 or a compatible version supported by the project's dependencies
+- Git
+- A Google Gemini API key
 
-2. Navigate to the project directory:
+### Step 1: Clone the Repository
 
-   ```bash
-   cd MUJ-DS-23FE10CDS00277
-   ```
+```bash
+git clone https://github.com/krishna-nema/MUJ-DS-23FE10CDS00277.git
+cd MUJ-DS-23FE10CDS00277
+```
 
-3. Create and activate a virtual environment:
+### Step 2: Create and Activate a Virtual Environment
 
-   ```bash
-   python -m venv venv
-   ```
+On Windows:
 
-   On Windows:
+```bash
+python -m venv venv
+venv\Scripts\activate
+```
 
-   ```bash
-   venv\Scripts\activate
-   ```
+### Step 3: Install Dependencies
 
-4. Install the required dependencies:
+```bash
+pip install -r code\requirements.txt
+```
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+### Step 4: Configure the API Key
 
-5. Create a `.env` file based on `.env.example` and add your Gemini API key:
+1. Create a copy of `.env.example` in the repository root and name it `.env`.
+2. Open `.env` and add your Gemini API key using the variable expected by the application.
 
-   ```text
-   GEMINI_API_KEY=your_api_key_here
-   ```
+Example:
 
-6. Run the application:
+```env
+GEMINI_API_KEY=your_gemini_api_key_here
+```
 
-   ```bash
-   streamlit run app.py
-   ```
+Replace the placeholder with your actual API key. **Never upload your real `.env` file or expose your API key publicly.**
 
-## Usage
+### Step 5: Run the Application
 
-1. Launch the Streamlit application.
-2. Enter or paste an email into the text area.
-3. Click the analysis button.
-4. Review the traditional NLP metrics and Gemini-generated contextual analysis.
-5. Examine the suggested improvements and professionally rewritten email.
+```bash
+cd code
+streamlit run app.py
+```
 
-## Limitations
+The application should open in your browser. If it does not, use the local URL displayed in the terminal.
 
-- Tone and recipient perception can be subjective.
-- Rule-based linguistic indicators may miss context.
-- Communication risk scores are heuristic estimates, not scientifically validated measurements.
-- Gemini analysis requires API access and is subject to the selected model's availability and usage limits.
-- The current implementation primarily focuses on English-language emails.
+## 7. How It Works
 
-## Future Scope
+1. The user enters an email message into the Streamlit interface.
+2. The NLP processing module extracts linguistic information, sentiment, and relevant keywords.
+3. The application evaluates communication characteristics using its analysis logic.
+4. The Gemini API provides contextual analysis of the email's tone and intent.
+5. The application displays the results and suggestions for improving the message.
 
-- Gmail and Outlook integration.
-- Multilingual email analysis.
-- Personalized writing styles.
-- Batch email analysis.
-- Email history analytics.
-- Machine-learning-based tone classification.
+## 8. Limitations
 
-## Security
+- Analysis results may vary depending on wording and context.
+- Sentiment and tone detection may misinterpret sarcasm, cultural nuances, or ambiguous language.
+- LLM-generated interpretations and suggestions may not always be accurate.
+- Contextual analysis requires a valid API key and an available API service.
+- The application is an assistive tool and should not be treated as a definitive judgment of the sender's intentions.
 
-Never commit your `.env` file, API keys, or other secrets to GitHub. The `.gitignore` file excludes sensitive configuration and virtual-environment files.
+## 9. Future Scope
 
-## Acknowledgement
+- Support for multiple languages.
+- Integration with email platforms.
+- More detailed emotion and intent classification.
+- User-defined tone preferences.
+- Expanded evaluation using a labeled email dataset.
+- Enhanced privacy controls and deployment options.
 
-Developed as an academic NLP project exploring the integration of traditional Natural Language Processing and Generative AI for professional communication analysis.
+## 10. Security and Privacy
+
+- API credentials must be stored in a local `.env` file.
+- The `.env` file and virtual environment must not be committed to GitHub.
+- Users should avoid submitting confidential or sensitive email content to external AI services unless they understand the applicable data-handling implications.
+
+## 11. Project Deliverables
+
+The repository is intended to contain the project source code, capstone documentation, presentation materials, screenshots, and sample results. Refer to the `code/`, `capstone/`, `presentations/`, and `resources/` directories for the corresponding materials.
+
+---
+
+**Project:** MailTone AI — Intelligent Email Tone & Intent Analyzer  
+**Student:** Krishna Nema  
+**Registration Number:** 23FE10CDS00277  
+**Branch:** Data Science | **Batch:** F
