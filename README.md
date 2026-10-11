@@ -5,7 +5,6 @@
 - **Name:** Krishna Nema
 - **Registration Number:** 23FE10CDS00277
 - **Branch:** Data Science
-- **Batch:** F
 - **Project Title:** MailTone AI — Intelligent Email Tone & Intent Analyzer
 - **GitHub Username:** [krishna-nema](https://github.com/krishna-nema)
 - **Training Program:** To be updated
@@ -167,4 +166,4 @@ The repository is intended to contain the project source code, capstone document
 **Project:** MailTone AI — Intelligent Email Tone & Intent Analyzer  
 **Student:** Krishna Nema  
 **Registration Number:** 23FE10CDS00277  
-**Branch:** Data Science | **Batch:** F
+**Branch:** Data Science |
