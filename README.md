@@ -8,7 +8,6 @@
 - **Batch:** F
 - **Project Title:** MailTone AI — Intelligent Email Tone & Intent Analyzer
 - **GitHub Username:** krishna-nema
-- **Training Program:** To be updated
 
 ## Project Overview
 
